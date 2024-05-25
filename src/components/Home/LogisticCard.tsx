@@ -15,7 +15,7 @@ interface SelectCountry {
   text: string;
   photo: string;
 }
-function LogisticCard({ country }: Props) {
+function LogisticCardItem({ country }: Props) {
   const countryText = [
     {
       country: "Japan",
@@ -65,24 +65,30 @@ function LogisticCard({ country }: Props) {
     text: "",
     photo: "",
   });
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
+    // Проверяем, что находимся на клиенте
     if (typeof window !== 'undefined') {
       const handleResize = () => {
         setWindowWidth(window.innerWidth);
       };
-
+  
+      // Установить начальное значение
+      handleResize();
+  
       window.addEventListener('resize', handleResize);
-
+  
       // Очистка эффекта при размонтировании компонента
       return () => {
         window.removeEventListener('resize', handleResize);
       };
     }
   }, []);
+
+
+
+
   useEffect(() => {
     const foundCountry = countryText.find((item) => item.country === country);
     if (foundCountry) {
@@ -176,4 +182,4 @@ function LogisticCard({ country }: Props) {
   );
 }
 
-export default LogisticCard;
+export default LogisticCardItem;

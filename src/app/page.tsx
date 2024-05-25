@@ -2,8 +2,13 @@ import Header from "@/components/header/header";
 import "./../styles/Home/home.scss";
 import TextBlockHome from "@/components/Home/textBlockHome";
 import CalculatePriceHome from "@/components/Home/calculatePriceHome";
-import LogisticCard from "@/components/Home/LogisticCard";
+
 import Link from "next/link";
+
+import MainLogisticCards from "@/components/Home/MainLogisticCards";
+import SupplierBlock from "@/components/Home/SupplierBlock";
+import { Container } from "postcss";
+import MainQuestions from "@/components/Home/MainQuestions";
 
 export default function Home() {
   const text = {
@@ -15,6 +20,33 @@ export default function Home() {
       H2: "160 000-200 000 ₽",
     },
   };
+
+  const categoriesCard = [
+    {
+      name: "Мебель",
+      photo: "/photo/Sofa.png",
+    },
+    {
+      name: "Электроника",
+      photo: "/photo/Notebook.png",
+    },
+    {
+      name: "Одежда",
+      photo: "/photo/Switer.png",
+    },
+    {
+      name: "Автомобили",
+      photo: "/photo/car.png",
+    },
+    {
+      name: "Спецтехника",
+      photo: "/photo/Excavator.png",
+    },
+    {
+      name: "Все категории",
+      photo: "/photo/Blocks.png",
+    },
+  ];
 
   // Home Page
   return (
@@ -34,21 +66,34 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Main */}
         <div className="Home__main">
           <div className="container">
             <div className="Home__main-logistic">
               <h2>Страны, из которых мы можем отправить груз</h2>
 
-              <div className="Home__main-logistic__cards">
-                <LogisticCard country="Japan" />
-                <LogisticCard country="South Korea" />
-                <LogisticCard country="China" />
-              </div>
+              <MainLogisticCards />
               <div className="Home__main-logistic__footer">
                 <button>Все направления</button>
               </div>
             </div>
+
+            <div className="Home__main-searchSupplier">
+              <h2>Поможем найти поставщика</h2>
+              {categoriesCard.map((item, index) => (
+                <SupplierBlock
+                  key={index}
+                  name={item.name}
+                  photo={item.photo}
+                />
+              ))}
+            </div>
           </div>
+        </div>
+
+        <div className="Home__questions">
+          <MainQuestions />
         </div>
       </div>
     </div>

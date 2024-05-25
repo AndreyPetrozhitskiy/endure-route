@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  button{
+  button {
     cursor: pointer;
   }
   &__header {
@@ -89,10 +89,52 @@
   }
 }
 
+.Home__main-logistic__cards {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+}
+
+.slider__slide {
+  flex: 1 0 100%;
+  max-width: 100%;
+}
+
+.slider__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slider__button--prev {
+  left: 10px;
+}
+
+.slider__button--next {
+  right: 10px;
+}
+
 @media (min-width: 1200px) {
   .LogisticCard {
     width: 356px;
-    height:600px;
+    height: 600px;
     &__header {
       height: 43px;
     }
@@ -203,8 +245,8 @@
           width: 48%;
         }
         button:nth-of-type(2) {
-            width: 48%;
-          }
+          width: 48%;
+        }
         button:nth-of-type(3) {
           width: 100%;
         }
@@ -313,8 +355,8 @@
           width: 45%;
         }
         button:nth-of-type(2) {
-            width: 45%;
-          }
+          width: 45%;
+        }
         button:nth-of-type(3) {
           width: 100%;
         }

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import "./../../styles/components/header/header.scss";
 import Image from "next/image";
 import LogoImageExtraLarge from "./../../../public/Logo//Type=White,Device=Desktop.svg";
@@ -25,28 +25,26 @@ function Header() {
     },
   };
 
+  const [windowWidth, setWindowWidth] = useState(0);
 
-// Отслеживание ширины экрана
-const [windowWidth, setWindowWidth] = useState(
-  typeof window !== 'undefined' ? window.innerWidth : 0
-);
+  useEffect(() => {
+    // Проверяем, что находимся на клиенте
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
 
-useEffect(() => {
-  if (typeof window !== 'undefined') {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+      // Установить начальное значение
+      handleResize();
 
-    window.addEventListener('resize', handleResize);
+      window.addEventListener("resize", handleResize);
 
-    // Очистка эффекта при размонтировании компонента
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }
-}, []);
-
-
+      // Очистка эффекта при размонтировании компонента
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+  }, []);
 
   return (
     <div className="base">
