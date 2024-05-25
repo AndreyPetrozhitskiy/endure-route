@@ -1,0 +1,235 @@
+@use './../variables' as *;
+
+.Home {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__header {
+    width: 100%;
+    height: auto;
+    background-color: black;
+  }
+  &__main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    &-logistic {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__cards {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      h2 {
+        width: 100%;
+        text-align: center;
+        font-weight:600 ;
+        color: $black-text;
+      }
+      &__footer{
+        width: 100%;
+        // margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        button{
+            width: 200px;
+            height: 43px;
+            border-radius: 24px;
+            background-color: $orange-900;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            font-size:$body-16;
+        }
+      }
+    }
+  }
+  &__container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+}
+
+@media (min-width: 1200px) {
+  .Home {
+    &__main {
+      &-logistic {
+        margin-top: 80px;
+        gap: 40px;
+        h2 {
+          font-size: $h2-size;
+        }
+        &__cards {
+          gap: 24px;
+        }
+      }
+    }
+    &__header {
+      height: 550px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 70px;
+      &-TextBlock {
+        width: 550px;
+        height: auto;
+      }
+      &-calculator {
+        width: 360px;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* Для разрешений от 992px до 1199.98px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .Home {
+    &__main {
+      &-logistic {
+        margin-top: 40px;
+        gap: 40px;
+        h2 {
+          font-size: $h3-size;
+        }
+        &__cards {
+          gap: 24px;
+        }
+      }
+    }
+    &__main {
+      &-logistic {
+        gap: 24px;
+      }
+    }
+    &__header {
+      height: 470px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      &-TextBlock {
+        width: 376px;
+        height: auto;
+      }
+      &-calculator {
+        width: 280px;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* Для разрешений от 768px до 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .Home {
+    &__main {
+      &-logistic {
+        margin-top: 40px;
+        gap: 20px;
+        h2 {
+            font-size: $h6-size;
+          }
+        &__cards {
+          gap: 24px;
+        }
+      }
+    }
+    &__header {
+      height: 470px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      &-TextBlock {
+        width: 336px;
+        height: auto;
+      }
+      &-calculator {
+        width: 280px;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* Для разрешений от 576px до 767.98px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .Home {
+    &__main {
+      &-logistic {
+        margin-top: 40px;
+        gap: 20px;
+        h2 {
+            font-size: $h6-size;
+          }
+        &__cards {
+          gap: 24px;
+        }
+      }
+    }
+    &__header {
+      height: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      &-TextBlock {
+        width: 247px;
+        height: auto;
+      }
+      &-calculator {
+        width: 250px;
+        height: auto;
+      }
+    }
+  }
+}
+
+/* Для разрешений < 576px */
+@media (max-width: 575.98px) {
+  .Home {
+    &__main {
+      &-logistic {
+        margin-top: 50px;
+        gap: 40px;
+        h2 {
+            font-size: $h6-size;
+          }
+        &__cards {
+          gap: 24px;
+        }
+      }
+    }
+    &__header {
+      height: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      &-TextBlock {
+        width: 100%;
+        margin-top: 60px;
+        height: auto;
+      }
+      &-calculator {
+        width: 350px;
+        height: auto;
+        margin-top: 60px;
+      }
+    }
+  }
+}

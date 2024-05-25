@@ -1,0 +1,55 @@
+@use 'sass:math';
+@use 'variables' as *;
+@use 'mixins';
+
+$min-font-size-h1: 32px; // Минимальный размер шрифта
+$max-font-size-h1: 56px; // Максимальный размер шрифта
+
+$min-vw: 320px; // Минимальная ширина экрана
+$max-vw: 1200px; // Максимальная ширина экрана
+
+@function fluid-font-size($min-size, $max-size, $min-vw, $max-vw) {
+  $slope: math.div($max-size - $min-size, $max-vw - $min-vw);
+  $base: $min-size - $slope * $min-vw;
+
+  @return clamp(#{$min-size}, #{$base} + #{$slope} * 100vw, #{$max-size});
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.base {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+// Адаптивный размер
+.container {
+  @include mixins.responsive-hug;
+  height: auto;
+}
+/* Для экранов с шириной >= 1200px */
+@media (min-width: 1200px) {
+}
+
+/* Для разрешений от 992px до 1199.98px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Для разрешений от 768px до 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Для разрешений от 576px до 767.98px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+/* Для разрешений < 576px */
+@media (max-width: 575.98px) {
+  /* Ваши стили для экранов с шириной меньше 576px */
+}

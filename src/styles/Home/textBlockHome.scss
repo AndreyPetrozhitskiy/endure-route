@@ -1,0 +1,147 @@
+@use '../variables' as *;
+
+.TextBlockHome {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 30px;
+
+  &__H1 {
+    h1 {
+      color: $orange-900;
+      font-weight: bold;
+    }
+  }
+
+  &__P {
+    p {
+      color: $black-600;
+    }
+  }
+
+  &__PRICE {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    p {
+      color: $black-600;
+    }
+
+    h2 {
+      color: white;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .TextBlockHome {
+    &__H1 h1 {
+      font-size: $h1-size;
+    }
+
+    &__P p {
+      font-size: $body-16;
+    }
+
+    &__PRICE {
+      p {
+        font-size: $h6-size;
+      }
+
+      h2 {
+        font-size: $h2-size;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .TextBlockHome {
+    &__H1 h1 {
+      font-size: $h2-size;
+    }
+
+    &__P p {
+      font-size: $body-16;
+    }
+
+    &__PRICE {
+      p {
+        font-size: $body-16;
+      }
+
+      h2 {
+        font-size: $h5-size;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .TextBlockHome {
+    &__H1 h1 {
+      font-size: $h2-size;
+    }
+
+    &__P p {
+      font-size: $body-16;
+    }
+
+    &__PRICE {
+      p {
+        font-size: $h6-size;
+      }
+
+      h2 {
+        font-size: $h5-size;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .TextBlockHome {
+    &__H1 h1 {
+      font-size: $h5-size;
+    }
+
+    &__P p {
+      font-size: $body-12;
+    }
+
+    &__PRICE {
+      p {
+        font-size: $body-14;
+      }
+
+      h2 {
+        font-size: $body-16;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .TextBlockHome {
+    &__H1 h1 {
+      font-size: $h3-size;
+    }
+
+    &__P p {
+      font-size: $body-16;
+    }
+
+    &__PRICE {
+      p {
+        font-size: $body-16;
+      }
+
+      h2 {
+        font-size: $h5-size;
+      }
+    }
+  }
+}

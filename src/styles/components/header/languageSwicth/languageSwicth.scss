@@ -1,0 +1,58 @@
+@use './../../../variables' as *;
+
+.LanguageSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  &__text {
+    p {
+      font-size: 14px;
+      color: white;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .LanguageSwitch {
+    width: 124px;
+    height: 44px;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $orange-900;
+    }
+
+    img:nth-of-type(1) {
+      width: 18px;
+      height: 18px;
+    }
+
+    img:nth-of-type(2) {
+      width: 12px;
+      height: 12px;
+    }
+
+    &__text {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .LanguageSwitch {
+    width: 24px;
+    height: 24px;
+
+    &__text {
+      display: none;
+    }
+
+    img:nth-of-type(2) {
+      display: none;
+    }
+  }
+}
